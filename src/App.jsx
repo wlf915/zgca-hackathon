@@ -4,24 +4,22 @@ import {
   CheckCircle2,
   ClipboardList,
   FileUp,
+  HandCoins,
   Landmark,
   Loader2,
   MapPinned,
-  Network,
   Search,
   Sparkles,
-  Users,
 } from 'lucide-react'
 import './App.css'
 
 const sampleDescription =
-  '星河智诊科技是一家 Pre-A 阶段的 AI 医疗创业公司，面向基层医院提供医学影像辅助诊断系统。团队有计算机视觉算法、边缘部署和医院试点经验，当前希望寻找中关村政策补贴、医疗器械注册合规专家、硬件设备伙伴和适合落地的医疗器械园区。'
+  '星河智诊科技是一家 Pre-A 阶段的 AI 医疗创业公司，面向基层医院提供医学影像辅助诊断系统。团队有计算机视觉算法、边缘部署和医院试点经验，当前希望寻找中关村政策补贴、适合落地的医疗器械园区，以及基金、创投、创业赛事和无息贷款等融资通道。'
 
 const categories = [
   { name: '政策', icon: Landmark },
   { name: '园区', icon: MapPinned },
-  { name: '企业', icon: Network },
-  { name: '人才', icon: Users },
+  { name: 'Funding Navigator', icon: HandCoins },
 ]
 
 function App() {
@@ -148,8 +146,8 @@ function App() {
 
               <div className="match-section">
                 <div className="section-title">
-                  <p className="eyebrow">Four-way Match</p>
-                  <h2>四向资源匹配</h2>
+                  <p className="eyebrow">Resource Match</p>
+                  <h2>政策 · 园区 · Funding Navigator</h2>
                 </div>
                 <div className="tabs">
                   {categories.map(({ name, icon: Icon }) => (
@@ -185,7 +183,7 @@ function EmptyState() {
     <div className="empty-state">
       <Building2 size={42} />
       <h2>等待企业输入</h2>
-      <p>提交后将生成企业画像、资源匹配卡片和 7/30/90 天行动路线。</p>
+      <p>提交后将生成企业画像、政策园区匹配、Funding Navigator 和 7/30/90 天行动路线。</p>
     </div>
   )
 }
@@ -235,7 +233,7 @@ function ResourceCard({ item }) {
     <article className="resource-card">
       <div className="resource-top">
         <div>
-          <p className="eyebrow">{item.category}{item.distance ? ` · ${item.distance}` : ''}</p>
+          <p className="eyebrow">{item.category}{item.subtype ? ` · ${item.subtype}` : ''}</p>
           <h3>{item.title}</h3>
         </div>
         <strong>{item.score}</strong>

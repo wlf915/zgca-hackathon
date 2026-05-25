@@ -27,13 +27,13 @@ const policies = [
     action: '将产品验证指标拆成临床、算法、部署三类，形成 1 页场景验证方案。',
   },
   {
-    id: 'policy-talent',
-    title: '海淀区高层次创新人才团队引进专项',
+    id: 'policy-rd',
+    title: '海淀区科技企业研发投入补贴',
     category: '政策',
-    tags: ['人才', '高管', '合规', '商业化', '政府事务', 'Pre-A'],
-    value: '人才落户、办公补贴与团队奖励组合支持',
-    requirements: ['核心成员符合高层次人才标准', '企业在海淀注册或拟迁入', '岗位职责清晰'],
-    action: '先定义法规注册负责人和政府事务负责人的岗位画像，再发起人才预匹配。',
+    tags: ['研发补贴', '人工智能', '硬科技', '知识产权', 'Pre-A'],
+    value: '按研发投入、知识产权和技术先进性给予阶梯式补贴',
+    requirements: ['企业在海淀注册或拟迁入', '研发费用台账清晰', '核心技术具备自主知识产权'],
+    action: '整理研发费用辅助账、专利软著清单和未来 12 个月研发计划。',
   },
   {
     id: 'policy-sme',
@@ -76,70 +76,70 @@ const parks = [
   },
 ]
 
-const companies = [
+const fundingNavigator = [
   {
-    id: 'co-device',
-    title: '华清影像设备有限公司',
-    category: '企业',
-    distance: '3.2km',
-    tags: ['医学影像', '硬件配套', '医院渠道', '边缘部署'],
-    value: '可提供影像设备接口、医院渠道和边缘盒子联合验证',
-    requirements: ['算法可部署到端侧设备', '具备影像数据处理能力', '愿意联合试点'],
-    action: '发起技术互补会，验证设备接口、推理延迟和联合 PoC 边界。',
+    id: 'fund-seed',
+    title: '中关村硬科技种子基金',
+    category: 'Funding Navigator',
+    subtype: '基金',
+    tags: ['基金', '硬科技', '人工智能', '医疗器械', 'Pre-A', '融资'],
+    value: '提供 300 万至 800 万元早期股权投资和产业专家陪跑',
+    requirements: ['具备明确技术壁垒', '有产品原型或试点客户', '融资轮次处于天使至 Pre-A'],
+    action: '准备 12 页融资 Deck、技术壁垒证明和 18 个月资金使用计划。',
   },
   {
-    id: 'co-cloud',
-    title: '北航云边智能实验室转化平台',
-    category: '企业',
-    distance: '4.8km',
-    tags: ['边缘计算', '计算机视觉', '算法优化', '科研合作'],
-    value: '可协助模型压缩、边缘推理优化和论文专利联合转化',
-    requirements: ['拥有自研模型', '需要端侧性能优化', '可开放部分测试数据'],
-    action: '准备模型结构、推理耗时和目标硬件参数，约 2 小时技术评审。',
+    id: 'fund-vc',
+    title: '海淀前沿产业创投联合会路演通道',
+    category: 'Funding Navigator',
+    subtype: '创投',
+    tags: ['创投', '融资', '商业化', '人工智能', 'Pre-A', '产业化'],
+    value: '对接 20+ 家硬科技 VC、产业资本和政府引导基金',
+    requirements: ['融资目标清晰', '商业化验证可量化', '团队股权结构清楚'],
+    action: '将 BP 改成投资人版本，突出市场规模、试点进展、融资用途和退出路径。',
   },
   {
-    id: 'co-hospital',
-    title: '海淀智慧临床创新联合体',
-    category: '企业',
-    distance: '5.0km',
-    tags: ['临床合规', '医院试点', '医学影像', '伦理审查'],
-    value: '连接临床科室、伦理预审和真实场景需求访谈',
-    requirements: ['明确临床价值假设', '具备隐私合规方案', '可提供产品演示'],
-    action: '先完成临床价值一页纸，再申请科室需求访谈。',
+    id: 'fund-competition',
+    title: '中关村创新创业大赛 AI 医疗专项赛',
+    category: 'Funding Navigator',
+    subtype: '创业赛事',
+    tags: ['创业赛事', 'AI医疗', '医学影像', '品牌背书', '融资', '场景验证'],
+    value: '获得赛事奖金、媒体曝光、投资人闭门会和园区绿色通道',
+    requirements: ['项目具备创新性', '可现场演示产品', '提交商业计划书和路演材料'],
+    action: '打磨 5 分钟路演脚本，突出痛点、技术壁垒、政策适配和落地计划。',
+  },
+  {
+    id: 'fund-loan',
+    title: '科技型小微企业无息周转贷款',
+    category: 'Funding Navigator',
+    subtype: '无息贷款',
+    tags: ['无息贷款', '硬科技', '研发补贴', '现金流', '商业化', '知识产权'],
+    value: '提供 50 万至 200 万元 6-12 个月无息周转资金',
+    requirements: ['企业信用记录良好', '有研发或订单支出证明', '法定代表人和企业征信通过初筛'],
+    action: '准备银行流水、订单或研发合同、纳税记录和知识产权证明。',
+  },
+  {
+    id: 'fund-med-growth',
+    title: '医疗器械成果转化引导基金',
+    category: 'Funding Navigator',
+    subtype: '基金',
+    tags: ['基金', 'AI医疗', '医疗器械', '临床合规', '产业化', '医院试点'],
+    value: '支持医疗器械注册、临床试点和首批产业化投入',
+    requirements: ['产品路径符合医疗器械或数字医疗方向', '具备注册策略', '已有临床或医院合作意向'],
+    action: '补齐注册路径、临床价值假设和试点医院意向材料。',
+  },
+  {
+    id: 'fund-bank',
+    title: '知识产权质押无息贷款绿色通道',
+    category: 'Funding Navigator',
+    subtype: '无息贷款',
+    tags: ['无息贷款', '知识产权', '专利', '软著', '硬科技', '现金流'],
+    value: '以专利、软著和研发合同作为增信材料，降低早期企业融资成本',
+    requirements: ['至少 1 项核心知识产权', '知识产权权属清晰', '资金用途为研发或订单交付'],
+    action: '先做知识产权权属核验，再提交质押评估和资金用途说明。',
   },
 ]
 
-const talents = [
-  {
-    id: 'talent-ra',
-    title: '医疗器械注册法规负责人',
-    category: '人才',
-    tags: ['临床合规', '医疗器械', '注册检测', '质量体系'],
-    value: '补齐注册路径、质量体系、检测和临床评价能力',
-    requirements: ['5 年以上二/三类器械注册经验', '熟悉 NMPA 审评口径', '能搭建 QMS'],
-    action: '优先寻找有 AI 辅助诊断或医学软件注册经验的候选人。',
-  },
-  {
-    id: 'talent-bd',
-    title: '政府事务与产业 BD 负责人',
-    category: '人才',
-    tags: ['政策', '园区', '商业化', '政府事务', '融资'],
-    value: '提升政策申报、园区落地、生态伙伴和首批订单转化效率',
-    requirements: ['熟悉中关村政策体系', '有园区和龙头企业资源', '能做项目制推进'],
-    action: '用 30 天目标考核候选人：政策预审、园区入驻和 3 个伙伴会。',
-  },
-  {
-    id: 'talent-supply',
-    title: '硬件供应链与中试负责人',
-    category: '人才',
-    tags: ['硬件配套', '边缘部署', '中试', '供应链', '机器人'],
-    value: '把算法产品推进到稳定样机、小批量交付和成本控制',
-    requirements: ['有硬件量产经验', '熟悉 BOM 与测试流程', '能管理供应商'],
-    action: '在联合 PoC 后引入兼职顾问，先建立样机测试和供应商清单。',
-  },
-]
-
-const resourcePool = [...policies, ...parks, ...companies, ...talents]
+const resourcePool = [...policies, ...parks, ...fundingNavigator]
 
 const keywordMap = [
   ['AI医疗', ['医疗', '影像', '临床', '诊断', '器械', '医院']],
@@ -151,6 +151,10 @@ const keywordMap = [
   ['临床合规', ['合规', '注册', 'NMPA', '临床', '伦理', '医疗器械']],
   ['商业化', ['销售', '客户', '订单', '渠道', '商业化', 'BD']],
   ['融资', ['融资', 'Pre-A', '天使', '投资']],
+  ['基金', ['基金', '引导基金', '种子基金']],
+  ['创投', ['创投', 'VC', '投资人', '路演']],
+  ['创业赛事', ['创业赛事', '大赛', '比赛', '路演', '奖金']],
+  ['无息贷款', ['无息贷款', '贷款', '周转', '现金流', '授信']],
   ['知识产权', ['专利', '软著', '知识产权', 'IP']],
 ]
 
@@ -219,7 +223,7 @@ function buildProfile(text) {
       medical ? '临床试点与注册合规' : '场景验证与标杆客户',
       hardware ? '硬件配套与中试资源' : '算法测评与算力资源',
       '政策补贴与园区落地',
-      '核心高管人才补位',
+      '基金、创投、赛事和无息贷款',
     ],
   }
 }
@@ -230,7 +234,7 @@ function scoreResource(profile, resource) {
   let score = 58 + hits.length * 9
   if (profile.stage.includes('Pre-A') && resource.tags.includes('Pre-A')) score += 8
   if (profile.weaknesses.some((weakness) => resource.tags.some((tag) => weakness.includes(tag)))) score += 8
-  if (resource.category === '企业' && resource.distance) score += 4
+  if (resource.category === 'Funding Navigator') score += 4
 
   return {
     ...resource,
@@ -246,8 +250,7 @@ function scoreResource(profile, resource) {
 function buildActionPlan(profile, matches) {
   const topPolicy = matches.find((item) => item.category === '政策')
   const topPark = matches.find((item) => item.category === '园区')
-  const topCompany = matches.find((item) => item.category === '企业')
-  const topTalent = matches.find((item) => item.category === '人才')
+  const topFunding = matches.find((item) => item.category === 'Funding Navigator')
 
   return [
     {
@@ -255,23 +258,23 @@ function buildActionPlan(profile, matches) {
       tasks: [
         `整理 BP、知识产权、团队社保和产品演示材料，用于 ${topPolicy?.title || '政策'} 预审。`,
         `向 ${topPark?.title || '目标园区'} 发起入驻咨询，确认免租、检测和绿色通道条件。`,
-        `形成 1 页短板补位清单，明确 ${profile.weaknesses[0]} 的责任人和材料缺口。`,
+        `形成融资材料缺口清单，明确 ${topFunding?.subtype || '资金'} 通道需要补齐的证明材料。`,
       ],
     },
     {
       horizon: '未来 30 天',
       tasks: [
-        `与 ${topCompany?.title || '生态伙伴'} 完成一次 PoC 会议，锁定接口、数据和试点边界。`,
-        `启动 ${topTalent?.title || '关键人才'} 招募或顾问合作，先用项目制补齐能力。`,
-        '完成政策申报包初稿，并把资源匹配结果转成 CRM 跟进列表。',
+        `完成 ${topFunding?.title || 'Funding Navigator'} 的首轮材料投递或路演预约。`,
+        '同步推进政策预审、园区入驻和资金通道尽调，形成统一材料包。',
+        '把政策、园区、基金、创投、赛事和贷款节点转成跟进看板。',
       ],
     },
     {
       horizon: '未来 90 天',
       tasks: [
         '完成首个场景验证或临床试点，沉淀可量化的算法、部署和客户价值指标。',
-        '形成园区落地、政策申报、生态合作和核心人才的闭环进展报告。',
-        '基于试点结果更新融资材料，面向硬科技基金和产业资本发起路演。',
+        '形成园区落地、政策申报和资金对接的闭环进展报告。',
+        '基于试点结果更新融资材料，面向基金、创投和无息贷款通道发起下一轮推进。',
       ],
     },
   ]
@@ -284,7 +287,7 @@ app.post('/api/analyze', upload.single('bp'), (req, res) => {
     .map((resource) => scoreResource(profile, resource))
     .sort((a, b) => b.score - a.score)
 
-  const matches = ['政策', '园区', '企业', '人才'].reduce((acc, category) => {
+  const matches = ['政策', '园区', 'Funding Navigator'].reduce((acc, category) => {
     acc[category] = scored.filter((item) => item.category === category).slice(0, 3)
     return acc
   }, {})
@@ -297,7 +300,7 @@ app.post('/api/analyze', upload.single('bp'), (req, res) => {
     actionPlan: buildActionPlan(profile, flatMatches),
     agents: [
       { name: '企业画像官', status: '已解析行业、技术壁垒和阶段短板' },
-      { name: '机会发现官', status: '已完成政策、园区、企业、人才四向匹配' },
+      { name: '机会发现官', status: '已完成政策、园区和 Funding Navigator 匹配' },
       { name: '行动规划官', status: '已生成 7/30/90 天资源行动路径' },
     ],
     generatedAt: new Date().toISOString(),
