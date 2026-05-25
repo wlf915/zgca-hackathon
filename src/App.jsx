@@ -4,6 +4,7 @@ import {
   Binary,
   BrainCircuit,
   BriefcaseBusiness,
+  CheckCircle2,
   CircleDot,
   Cpu,
   Globe2,
@@ -56,354 +57,273 @@ const subscriptionPlans = [
   },
   {
     name: '订阅计划',
-    price: '¥199 / 年',
+    price: '¥899 / 年',
     audience: '适合需要持续追踪政策、投资人和成长路线的创业团队',
-    features: ['首月免费体验', '每月 10 份 BP / 项目材料解析', '政策动态监控与提醒', '投资人画像与沟通建议', '30/90/180 天路线追踪'],
+    features: ['首月免费体验', '每月 10 份 BP / 项目材料解析', '政策动态监控与提醒', '投资人画像与沟通建议', '30/90/180 天路线追踪', '政策申报协助（每月 1 次）', '投资人联系协助（每月 2 次）'],
     highlighted: true,
   },
   {
     name: '定制报价',
     price: '定制报价',
-    audience: '面向园区、孵化器、投资机构和企业服务平台的专属服务',
-    features: ['批量企业画像建档', '政策库与投资人库定制', '专属顾问服务', '多账号协同工作台', 'API / 私有化部署支持'],
+    audience: '为有融资或政策需求的成长型企业提供一对一定制咨询与全程陪伴服务',
+    features: ['约线下一对一定制咨询', '政策全程代填代报', '定制资本沟通渠道', '专属顾问全程陪伴', '多账号协同 & API 支持'],
   },
 ]
 
 const demoBps = [
   {
-    id: 'med-ai',
-    name: '星河智诊',
-    fileName: '星河智诊_AI医疗影像_BP.pdf',
-    summary: '面向基层医院的 AI 医学影像辅助诊断系统，已完成 3 家医院试点，计划融资用于注册检测和渠道扩张。',
+    id: 'competition',
+    category: '创赛 / 大创',
+    name: '智农感知',
+    fileName: '智农感知_农业IoT病虫害识别_BP.pdf',
+    summary: '全国大学生创新创业大赛一等奖项目，基于低功耗物联网与边缘 AI 的农业病虫害早期预警系统。',
     analysis: {
-      company: '星河智诊',
-      field: 'AI 医疗影像辅助诊断',
-      plan: '先从基层医院胸部影像筛查切入，形成试点数据和注册路径，再扩展到多病种影像模型。',
-      patents: '2 项算法发明专利申请中，4 项软件著作权已规划',
-      scale: '18 人团队，3 家医院试点，预计 12 个月覆盖 30 家基层医疗机构',
-      strengths: ['基层医疗场景刚需明确', '算法团队具备影像模型经验', '试点医院可形成示范案例'],
+      company: '智农感知',
+      field: '农业物联网与边缘 AI 病虫害识别',
+      plan: '以大创获奖为背书，通过与农业合作社和地方农技站合作完成产品验证，进而转化为商业化公司。',
+      patents: '1 项传感器组网专利申请中，2 项软件著作权已申请',
+      scale: '7 人核心团队（含 2 名硕士生、1 名指导教师），完成 2 块试验田部署',
+      strengths: ['国家级竞赛背书，转化基础扎实', '农业场景痛点清晰，传感器成本低', '指导教师具备农业遥感背景'],
     },
     profile: [
-      ['企业阶段', 'Pre-A / 医疗 AI'],
-      ['核心赛道', 'AI 医疗影像'],
-      ['融资诉求', '1200 万 - 1800 万'],
-      ['政策适配', '医疗器械 / 高新技术'],
-      ['技术壁垒', '影像算法 + 临床数据闭环'],
-      ['客户验证', '3 家基层医院试点'],
-      ['申报抓手', '注册检测、示范应用、软著专利'],
-      ['资金用途', '注册检测、渠道扩张、算法迭代'],
+      ['企业阶段', '种子期 / 大创转化'],
+      ['核心赛道', '农业 IoT + 边缘 AI'],
+      ['融资诉求', '100 万 - 200 万'],
+      ['政策适配', '大学生创业 / 农业科技'],
+      ['技术壁垒', '低功耗传感组网 + 边缘推理'],
+      ['客户验证', '2 块合作社试验田'],
+      ['申报抓手', '大创扶持、农业示范、科技型小微'],
+      ['资金用途', '产品化、量产、渠道拓展'],
     ],
     policies: [
       {
-        title: '医疗器械成果转化支持资金',
-        amount: '预计 100 万 - 200 万',
-        url: 'https://www.beijing.gov.cn/zhengce/zhengcefagui/202602/t20260202_4484642.html',
-        conditions: ['产品具备医疗器械注册路径', '已有医院试点或临床合作', '研发费用和检测费用可追溯'],
-        reason: 'BP 中已有基层医院试点和影像算法能力，适合优先申请成果转化与注册检测补贴。',
-        materials: ['注册路径说明', '医院试点协议', '检测费用预算', '算法性能报告'],
+        title: '大学生创业扶持专项资金',
+        amount: '预计 10 万 - 30 万',
+        url: 'https://jxj.beijing.gov.cn/zwgk/2024zcwj/202411/t20241126_3949975.html',
+        conditions: ['团队主要成员为在校或应届大学生', '项目已获省级以上竞赛奖项', '有明确商业化意向'],
+        reason: '项目获全国大创一等奖，符合大学生创业扶持各项条件，可优先申请种子资金。',
+        materials: ['竞赛获奖证书', '团队成员学籍证明', '商业计划书', '指导教师推荐函'],
+      },
+      {
+        title: '农业科技示范推广补贴',
+        amount: '预计 20 万 - 60 万',
+        url: 'https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcjd/202505/t20250522_4095649.html',
+        conditions: ['产品面向农业生产场景', '有真实农业合作方或试验田', '具备病虫害识别技术能力'],
+        reason: '合作社试验田部署可包装为农业科技示范场景，适合申请推广补贴。',
+        materials: ['合作社合作协议', '试验田照片与数据', '产品功能说明', '技术路线报告'],
+      },
+      {
+        title: '科技型小微企业研发补贴',
+        amount: '预计 10 万 - 30 万',
+        url: 'https://beijing.chinatax.gov.cn/bjswj/sszc/zcjd/202404/fe5436e8d5304d4a86da854ba03e17d8/files/f9bc3557fc6844218bebce6fbdcdac37.pdf',
+        conditions: ['注册为科技型小微企业', '有明确研发费用', '软著或专利可证明技术能力'],
+        reason: '团队完成工商注册后即可申请科技型小微认定，叠加研发补贴覆盖前期成本。',
+        materials: ['营业执照', '软著证明', '研发费用台账', '研发人员名单'],
+      },
+    ],
+    investors: [
+      {
+        name: '梅花创投',
+        ticket: '单笔 100 万 - 500 万',
+        focus: '农业科技、物联网、早期硬件',
+        history: '关注早期农业数字化和物联网赛道，投资过多家农业 AI 初创项目。',
+        advice: '重点呈现试验田数据、病虫害识别准确率和合作社复购意愿，以及团队指导教师的技术背书。',
+        contact: 'bp@meihuavc.com',
+        website: 'https://www.meihuavc.com/',
+      },
+      {
+        name: '联想之星',
+        ticket: '单笔 50 万 - 300 万',
+        focus: '科技创业、大学生创业、物联网',
+        history: '持续关注高校科技成果转化和大学生创业，有完善的早期孵化体系。',
+        advice: '建议准备清晰的商业化路径，说明如何从试验田扩展到规模化农业渠道及团队转化能力。',
+        contact: 'contact@legendstar.com.cn',
+        website: 'https://www.legendstar.com.cn/',
+      },
+      {
+        name: '峰瑞资本',
+        ticket: '单笔 100 万 - 600 万',
+        focus: '农业科技、硬科技、早期创业',
+        history: '投资过多家以高校为背景的硬科技初创，关注技术壁垒和场景落地节奏。',
+        advice: '沟通时突出低功耗传感器的成本优势和边缘 AI 数据闭环能力，以及规模化量产路径。',
+        contact: 'bp@freesvc.com',
+        website: 'https://www.freesvc.com/',
+      },
+    ],
+    roadmap: [
+      { horizon: '30 天', title: '完成注册与政策申报准备', tasks: ['完成公司注册和银行账户开立', '整理竞赛获奖材料和试验田数据', '确定大创扶持资金申报路径', '制作投资人版 Deck'] },
+      { horizon: '90 天', title: '推进产品化与渠道验证', tasks: ['完成传感器量产版本 V1.0', '新增 2-3 家合作社试点', '提交农业科技示范补贴材料', '完成 5 家早期投资人沟通'] },
+      { horizon: '180 天', title: '形成商业化闭环', tasks: ['争取首批政策资金落地', '建立农技站渠道合作', '完成种子轮融资', '将试验田数据包装为可复制商业案例'] },
+    ],
+  },
+  {
+    id: 'lab',
+    category: '科研实验室',
+    name: '绿晨新材料',
+    fileName: '绿晨新材料_可降解高分子材料_BP.pdf',
+    summary: '清华大学化工系实验室孵化，开发出具有自主知识产权的生物基可降解高分子材料，已获 3 项授权专利。',
+    analysis: {
+      company: '绿晨新材料',
+      field: '生物基可降解高分子材料',
+      plan: '依托实验室专利，与包装和农膜厂商合作开展小批量试产，逐步实现技术成果产业化。',
+      patents: '3 项发明专利已授权，2 项专利申请中，5 项软著',
+      scale: '12 人团队（含 1 名教授、3 名博士生），完成中试线搭建，已有 2 家厂商试用',
+      strengths: ['专利壁垒高，核心配方受严格保护', '绿色材料政策顺风', '教授团队具备丰富材料研发经验'],
+    },
+    profile: [
+      ['企业阶段', '天使期 / 科技成果转化'],
+      ['核心赛道', '可降解高分子材料'],
+      ['融资诉求', '500 万 - 1000 万'],
+      ['政策适配', '绿色低碳 / 科技成果转化'],
+      ['技术壁垒', '专利配方 + 中试工艺'],
+      ['客户验证', '2 家包装厂商试用中'],
+      ['申报抓手', '科技成果转化、绿色低碳补贴'],
+      ['资金用途', '中试放大、检测认证、市场开拓'],
+    ],
+    policies: [
+      {
+        title: '高校科技成果转化专项资金',
+        amount: '预计 100 万 - 300 万',
+        url: 'https://www.ncsti.gov.cn/zcfg/zcwj/201903/t20190321_13420.html',
+        conditions: ['技术来源于高校实验室', '已完成中试或小批量验证', '有明确产业化计划'],
+        reason: '技术来源清华大学实验室，已完成中试线搭建，符合科技成果转化主要条件。',
+        materials: ['专利证书', '实验室技术转让协议', '中试报告', '产业化计划书'],
+      },
+      {
+        title: '绿色低碳材料技术推广补贴',
+        amount: '预计 80 万 - 200 万',
+        url: 'https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcjd/202505/t20250522_4095649.html',
+        conditions: ['材料具备生物降解性能', '有检测报告或认证', '面向实体产业客户'],
+        reason: '可降解材料直接服务双碳目标，试用客户可作为推广场景证明。',
+        materials: ['降解性能检测报告', '客户试用合同', '材料技术说明', '碳减排测算'],
       },
       {
         title: '北京市高新技术企业培育补贴',
         amount: '预计 30 万 - 80 万',
         url: 'https://jxj.beijing.gov.cn/zwgk/2024zcwj/202411/t20241126_3949975.html',
-        conditions: ['研发人员占比达标', '拥有软著或专利', '主营收入与技术产品相关'],
-        reason: '团队技术人员占比较高，已有算法系统和医院场景，符合高新培育方向。',
-        materials: ['知识产权证明', '研发人员名单', '财务报表', '产品说明书'],
-      },
-      {
-        title: '中关村前沿技术试点示范项目',
-        amount: '预计 80 万 - 150 万',
-        url: 'https://www.ncsti.gov.cn/zcfg/zcwj/201903/t20190321_13420.html',
-        conditions: ['技术具备创新性', '有真实应用场景', '可形成示范案例'],
-        reason: '基层医疗场景具有明确公共价值，适合包装成 AI 医疗示范应用。',
-        materials: ['试点医院证明', '示范应用方案', '项目预算书', '数据合规说明'],
-      },
-    ],
-    investors: [
-      {
-        name: '启明创投',
-        ticket: '单笔 800 万 - 2000 万',
-        focus: '医疗科技、AI 应用、早期硬科技',
-        history: '过往投资覆盖医疗 AI、创新器械和数字医疗服务平台。',
-        advice: '重点呈现医院试点转化率、注册路径、算法准确率和商业化回款模型。',
-        contact: 'healthcare@qimingvc.com',
-        website: 'https://www.qimingvc.com/',
-      },
-      {
-        name: '红杉中国种子基金',
-        ticket: '单笔 500 万 - 1500 万',
-        focus: 'AI 原生应用、医疗效率工具',
-        history: '关注用 AI 改造高价值行业工作流的早期团队。',
-        advice: '建议用医生工作流前后对比，说明产品节省时间和提升诊断一致性的能力。',
-        contact: 'seed@hongshan.com',
-        website: 'https://www.hongshan.com/',
-      },
-      {
-        name: '北极光创投',
-        ticket: '单笔 1000 万 - 3000 万',
-        focus: '生命科学、AI 技术商业化',
-        history: '偏好技术壁垒清晰、临床价值明确、具备长期平台潜力的公司。',
-        advice: '沟通时突出核心算法壁垒、数据来源合规性和后续多病种扩展路线。',
-        contact: 'bp@nlightvc.com',
-        website: 'https://www.nlightvc.com/',
-      },
-    ],
-    roadmap: [
-      { horizon: '30 天', title: '补齐医疗合规材料', tasks: ['明确器械分类和注册路径', '整理医院试点数据', '准备算法性能报告', '锁定 2 项医疗专项政策'] },
-      { horizon: '90 天', title: '推进试点和政策申报', tasks: ['提交成果转化资金申请', '新增 2 家试点医院', '完成投资人版医疗合规 Deck', '启动核心专利申请'] },
-      { horizon: '180 天', title: '进入融资与注册检测阶段', tasks: ['完成注册检测预算和时间表', '争取政策资金批复', '形成 Pre-A 融资条款', '建立渠道合作样板'] },
-    ],
-  },
-  {
-    id: 'robot',
-    name: '云臂机器人',
-    fileName: '云臂机器人_柔性协作机械臂_BP.pdf',
-    summary: '柔性协作机械臂公司，服务 3C 装配和精密检测场景，已有小批量交付和核心控制算法。',
-    analysis: {
-      company: '云臂机器人',
-      field: '柔性协作机械臂与工业自动化',
-      plan: '聚焦 3C 精密装配和检测产线，用标准机械臂本体加场景算法包提升交付效率。',
-      patents: '3 项控制算法专利，1 项结构设计专利，2 项软著',
-      scale: '26 人团队，已完成 12 台小批量交付，目标 18 个月交付 120 台',
-      strengths: ['已有真实订单和验收材料', '场景聚焦便于复制', '具备供应链降本空间'],
-    },
-    profile: [
-      ['企业阶段', 'A 轮前 / 智能制造'],
-      ['核心赛道', '协作机器人'],
-      ['融资诉求', '2000 万 - 3000 万'],
-      ['政策适配', '智能制造 / 专精特新'],
-      ['技术壁垒', '柔性控制算法 + 本体设计'],
-      ['客户验证', '12 台小批量交付'],
-      ['申报抓手', '首台套、专精特新、产线示范'],
-      ['资金用途', '供应链、产能建设、量产良率'],
-    ],
-    policies: [
-      {
-        title: '智能制造装备首台套支持',
-        amount: '预计 150 万 - 300 万',
-        url: 'https://www.ncsti.gov.cn/zcfg/zcwj/201903/t20190321_13420.html',
-        conditions: ['装备具有自主知识产权', '完成首批客户验证', '具备产业化量产计划'],
-        reason: 'BP 显示已有小批量交付和控制算法，适合按首台套装备方向申报。',
-        materials: ['客户验收报告', '装备技术说明', '知识产权清单', '量产计划书'],
-      },
-      {
-        title: '专精特新中小企业认定',
-        amount: '预计 50 万 - 100 万',
-        url: 'https://jxj.beijing.gov.cn/zwgk/2024zcwj/202604/t20260424_4609408.html',
-        conditions: ['长期聚焦细分制造场景', '核心零部件或算法自主可控', '收入增长稳定'],
-        reason: '公司聚焦 3C 精密装配场景，产品边界清晰，适合以专精特新作为资质抓手。',
-        materials: ['主营收入证明', '客户案例', '研发投入台账', '核心团队简历'],
-      },
-      {
-        title: '高端装备产业化补贴',
-        amount: '预计 80 万 - 200 万',
-        url: 'https://jxj.beijing.gov.cn/zwgk/2024zcwj/202405/W020240530752218741457.pdf',
-        conditions: ['有明确产线或供应链投入', '产品进入交付阶段', '能带动本地产业链协同'],
-        reason: '融资用途包含供应链和产能建设，可与高端装备产业化资金匹配。',
-        materials: ['产能建设方案', '供应商合同', '订单证明', '资金使用计划'],
-      },
-    ],
-    investors: [
-      {
-        name: '顺为资本',
-        ticket: '单笔 1500 万 - 4000 万',
-        focus: '智能硬件、机器人、先进制造',
-        history: '长期关注硬件产品化、供应链能力和规模化销售效率。',
-        advice: '突出 BOM 成本下降曲线、客户复购、交付周期和量产良率。',
-        contact: 'bp@shunwei.com',
-        website: 'https://www.shunwei.com/',
-      },
-      {
-        name: '高瓴创投',
-        ticket: '单笔 2000 万 - 5000 万',
-        focus: '先进制造、产业自动化、机器人',
-        history: '偏好有行业纵深、客户价值明确、长期市场空间大的智能制造企业。',
-        advice: '建议准备重点客户案例，讲清替代人工和提升产线效率的量化指标。',
-        contact: 'venture@hillhousecap.com',
-        website: 'https://www.hillhouseinvestment.com/',
-      },
-      {
-        name: '达晨财智',
-        ticket: '单笔 1000 万 - 3000 万',
-        focus: '硬科技、装备制造、产业升级',
-        history: '投资过多家制造业升级与工业自动化相关企业。',
-        advice: '沟通时强调订单确定性、政策资质、地方落地和产业资本协同价值。',
-        contact: 'contact@fortunevc.com',
-        website: 'https://www.fortunevc.com/',
-      },
-    ],
-    roadmap: [
-      { horizon: '30 天', title: '打磨首台套申报基础', tasks: ['整理客户验收材料', '完成装备技术白皮书', '梳理供应链成本结构', '确定政策申报优先级'] },
-      { horizon: '90 天', title: '强化交付和融资证据', tasks: ['完成 2 个标杆客户复盘', '提交首台套或产业化政策', '约见 10 家先进制造投资人', '更新量产资金计划'] },
-      { horizon: '180 天', title: '扩大订单和产能', tasks: ['完成小批量稳定交付', '争取政策批复或资质认定', '推进 A 轮融资', '建立本地产业园落地方案'] },
-    ],
-  },
-  {
-    id: 'carbon',
-    name: '绿算科技',
-    fileName: '绿算科技_企业碳管理SaaS_BP.pdf',
-    summary: '为制造企业提供碳盘查、碳足迹核算和 ESG 报告自动化工具，已服务 20 家付费客户。',
-    analysis: {
-      company: '绿算科技',
-      field: '企业碳管理 SaaS',
-      plan: '从制造业碳盘查工具切入，逐步扩展到碳足迹、供应链碳数据和 ESG 自动报告。',
-      patents: '1 项数据处理专利申请中，5 项软件著作权',
-      scale: '14 人团队，20 家付费客户，年化收入约 260 万',
-      strengths: ['客户付费验证较早', '政策趋势明确', 'SaaS 交付边际成本较低'],
-    },
-    profile: [
-      ['企业阶段', '天使+ / SaaS'],
-      ['核心赛道', '双碳管理软件'],
-      ['融资诉求', '600 万 - 1000 万'],
-      ['政策适配', '绿色低碳 / 数字化转型'],
-      ['技术壁垒', '碳数据模型 + 自动报告流程'],
-      ['客户验证', '20 家制造业付费客户'],
-      ['申报抓手', '绿色低碳服务、数字化服务商'],
-      ['资金用途', '产品模块、渠道伙伴、行业模板'],
-    ],
-    policies: [
-      {
-        title: '绿色低碳技术服务补贴',
-        amount: '预计 40 万 - 100 万',
-        url: 'https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcjd/202505/t20250522_4095649.html',
-        conditions: ['服务对象属于实体产业', '具备碳核算或减排方法论', '有付费客户案例'],
-        reason: 'BP 中已有制造业付费客户，产品直接服务企业低碳转型。',
-        materials: ['客户服务合同', '碳核算方法说明', '产品截图', '减排效果案例'],
-      },
-      {
-        title: '中小企业数字化转型服务商入库',
-        amount: '预计 30 万 - 80 万',
-        url: 'https://jxj.beijing.gov.cn/zwgk/2024zcwj/202507/t20250729_4161230.html',
-        conditions: ['具备 SaaS 产品交付能力', '服务中小企业数字化', '有可复制实施流程'],
-        reason: '企业碳管理具备软件化交付特点，适合进入数字化服务商目录。',
-        materials: ['服务商申请表', '产品功能说明', '客户名单', '实施流程文档'],
-      },
-      {
-        title: '科技型中小企业研发补贴',
-        amount: '预计 20 万 - 50 万',
-        url: 'https://beijing.chinatax.gov.cn/bjswj/sszc/zcjd/202404/fe5436e8d5304d4a86da854ba03e17d8/files/f9bc3557fc6844218bebce6fbdcdac37.pdf',
-        conditions: ['研发项目明确', '研发费用可归集', '软件著作权或算法模块可证明'],
-        reason: '产品仍在进行行业模型和自动报告能力迭代，可用研发补贴覆盖开发成本。',
-        materials: ['软著证明', '研发费用台账', '版本迭代记录', '人员社保证明'],
-      },
-    ],
-    investors: [
-      {
-        name: '源码资本',
-        ticket: '单笔 600 万 - 1800 万',
-        focus: '企业服务、产业数字化、SaaS',
-        history: '关注能切入真实企业流程并持续扩张客单价的 SaaS 公司。',
-        advice: '重点展示客户留存、续费率、实施成本和从碳盘查扩展到 ESG 的路径。',
-        contact: 'contact@sourcecodecap.com',
-        website: 'https://www.sourcecodecap.com/',
-      },
-      {
-        name: '经纬创投',
-        ticket: '单笔 800 万 - 2000 万',
-        focus: '企业服务、效率工具、行业软件',
-        history: '投资过多家 SaaS、垂直行业软件和数字化服务公司。',
-        advice: '建议用客户漏斗和 ARR 增长数据说明商业化质量。',
-        contact: 'bp@matrixpartners.com.cn',
-        website: 'https://www.matrixpartners.com.cn/',
-      },
-      {
-        name: '线性资本',
-        ticket: '单笔 500 万 - 1500 万',
-        focus: '数据智能、AI 应用、企业软件',
-        history: '偏好数据驱动、产品体验强、可规模化交付的技术团队。',
-        advice: '沟通时突出碳数据自动化采集能力和 AI 报告生成壁垒。',
-        contact: 'hello@linear.vc',
-        website: 'https://linear.vc/',
-      },
-    ],
-    roadmap: [
-      { horizon: '30 天', title: '强化 SaaS 商业化指标', tasks: ['整理 ARR、续费率和客单价', '准备 3 个标杆客户案例', '申请数字化服务商入库', '完善产品演示脚本'] },
-      { horizon: '90 天', title: '政策入库与融资推进', tasks: ['提交绿色低碳服务补贴', '完成 10 家投资人沟通', '推出 ESG 报告模块', '建立渠道伙伴合作清单'] },
-      { horizon: '180 天', title: '扩大行业复制', tasks: ['形成制造业客户模板', '提升 ARR 增长稳定性', '争取政策资金到账', '完成下一轮融资或战略合作'] },
-    ],
-  },
-  {
-    id: 'chip',
-    name: '凌芯微电子',
-    fileName: '凌芯微电子_边缘AI芯片_BP.pdf',
-    summary: '边缘 AI 推理芯片设计公司，面向工业相机和智能终端，已完成 MPW 流片和客户样片测试。',
-    analysis: {
-      company: '凌芯微电子',
-      field: '边缘 AI 推理芯片',
-      plan: '面向工业相机和智能终端提供低功耗推理芯片，先完成样片验证，再推进小批量量产。',
-      patents: '4 项芯片架构和算子加速相关专利申请中',
-      scale: '22 人团队，完成 MPW 流片，5 家客户进入样片测试',
-      strengths: ['技术壁垒和资金门槛较高', '国产替代叙事明确', '客户测试信号已出现'],
-    },
-    profile: [
-      ['企业阶段', 'Pre-A / 芯片设计'],
-      ['核心赛道', '边缘 AI 芯片'],
-      ['融资诉求', '3000 万 - 5000 万'],
-      ['政策适配', '集成电路 / 硬科技'],
-      ['技术壁垒', '低功耗推理架构 + 算子加速'],
-      ['客户验证', 'MPW 流片，5 家样片测试'],
-      ['申报抓手', '集成电路专项、首购首用'],
-      ['资金用途', '流片、EDA、样片验证、量产准备'],
-    ],
-    policies: [
-      {
-        title: '集成电路设计企业研发支持',
-        amount: '预计 200 万 - 500 万',
-        url: 'https://www.beijing.gov.cn/zhengce/zfwj/zfwj/szfwj/201905/t20190523_72690.html',
-        conditions: ['企业主营为芯片设计', '已发生流片或 EDA 费用', '具备自主 IP 或架构设计'],
-        reason: 'BP 中明确 MPW 流片和边缘 AI 架构，适合申请集成电路专项研发资金。',
-        materials: ['流片合同与发票', '芯片架构说明', 'EDA 费用证明', 'IP 权属材料'],
-      },
-      {
-        title: '硬科技企业股权投资引导基金',
-        amount: '预计 500 万 - 1000 万',
-        url: 'https://www.ncsti.gov.cn/zcfg/zcwj/201903/t20190321_13420.html',
-        conditions: ['技术壁垒高', '融资用途明确', '具有产业客户验证'],
-        reason: '芯片项目资金需求大、技术门槛高，可争取政府引导基金参与本轮融资。',
-        materials: ['融资计划书', '客户测试报告', '资金使用计划', '团队技术背景证明'],
-      },
-      {
-        title: '北京市首购首用示范项目',
-        amount: '预计 100 万 - 300 万',
-        url: 'https://www.beijing.gov.cn/zhengce/zfwj/zfwj/szfwj/201905/t20190523_72690.html',
-        conditions: ['产品进入样片或小批量阶段', '有本地客户试用', '具备示范替代价值'],
-        reason: '工业相机和智能终端客户测试可包装为首购首用场景。',
-        materials: ['样片测试报告', '客户试用协议', '产品替代价值说明', '示范项目方案'],
+        conditions: ['拥有自主知识产权', '研发人员占比达标', '主营业务与技术相关'],
+        reason: '团队拥有多项授权专利，博士研发团队占比高，适合申请高新技术企业培育。',
+        materials: ['专利证书', '研发人员学历证明', '营业执照', '财务报表'],
       },
     ],
     investors: [
       {
         name: '深创投',
-        ticket: '单笔 3000 万 - 8000 万',
-        focus: '半导体、硬科技、先进制造',
-        history: '长期投资集成电路、设备材料和硬科技产业链项目。',
-        advice: '重点说明流片进展、客户验证、量产风险和资金使用节点。',
-        contact: 'semiconductor@szvc.com.cn',
+        ticket: '单笔 500 万 - 2000 万',
+        focus: '新材料、绿色科技、硬科技成果转化',
+        history: '持续布局新材料和绿色低碳赛道，对高校成果转化项目有丰富投资经验。',
+        advice: '重点呈现专利壁垒和中试工艺成熟度，以及客户试用进展和替代传统材料的性价比测算。',
+        contact: 'materials@szvc.com.cn',
         website: 'https://www.szvc.com.cn/',
       },
       {
-        name: '元禾璞华',
-        ticket: '单笔 3000 万 - 7000 万',
-        focus: '半导体设计、芯片 IP、国产替代',
-        history: '专注半导体产业链，对芯片设计公司技术路线判断经验丰富。',
-        advice: '建议准备架构对标、功耗性能指标和目标客户导入计划。',
-        contact: 'bp@puhua-capital.com',
-        website: 'https://www.puhua-capital.com/',
+        name: '中科创星',
+        ticket: '单笔 300 万 - 1500 万',
+        focus: '科技成果转化、硬科技、新材料',
+        history: '专注高校和科研院所科技成果转化，在材料和化工领域投资经验丰富。',
+        advice: '建议准备详细的技术路线图和产业化成本结构，说明中试放大后的量产可行性。',
+        contact: 'bp@msvc.com.cn',
+        website: 'https://www.msvc.com.cn/',
       },
       {
-        name: '华登国际',
-        ticket: '单笔 4000 万 - 1 亿',
-        focus: '集成电路、AI 芯片、工业智能',
-        history: '在半导体和智能硬件领域有长期投资布局。',
-        advice: '沟通时突出团队流片经验、供应链可控性和未来产品矩阵。',
-        contact: 'contact@waldenintl.com',
-        website: 'https://www.waldenintl.com/',
+        name: '国科嘉和',
+        ticket: '单笔 500 万 - 3000 万',
+        focus: '科技成果转化、绿色材料、产业链投资',
+        history: '国家级科技成果转化基金背景，重点支持高校科研转化和绿色制造项目。',
+        advice: '沟通时突出专利授权状态、中试数据和客户试用效果，以及教授团队的行业影响力。',
+        contact: 'contact@guokejiahe.com',
+        website: 'https://www.guokejiahe.com/',
       },
     ],
     roadmap: [
-      { horizon: '30 天', title: '整理芯片专项材料', tasks: ['汇总流片与 EDA 费用', '完善架构和性能对标文档', '整理客户样片反馈', '确定集成电路专项申报路径'] },
-      { horizon: '90 天', title: '推进政策和融资双线', tasks: ['提交研发支持或引导基金材料', '完成 8 家半导体投资人会议', '明确下一次流片预算', '补齐供应链合作证明'] },
-      { horizon: '180 天', title: '进入样片验证和融资交割', tasks: ['完成关键客户测试报告', '争取专项资金或基金跟投', '推动 Pre-A 融资交割', '制定量产前风险清单'] },
+      { horizon: '30 天', title: '完善知识产权与转化手续', tasks: ['确认专利独家授权协议', '完成技术转让合同签署', '提交科技成果转化资金申请', '整理中试数据和客户试用报告'] },
+      { horizon: '90 天', title: '推进中试放大与客户导入', tasks: ['完成中试产能提升至 5 吨/月', '新增 2-3 家包装或农膜客户', '提交绿色低碳材料补贴', '完成天使轮投资人路演'] },
+      { horizon: '180 天', title: '形成量产与认证突破', tasks: ['取得降解材料相关资质认证', '争取政策资金到账', '完成天使轮融资', '建立第一批规模化供货合同'] },
+    ],
+  },
+  {
+    id: 'startup',
+    category: '初创企业',
+    name: '链图科技',
+    fileName: '链图科技_供应链可视化SaaS_BP.pdf',
+    summary: '为制造业和贸易企业提供供应链全链路可视化 SaaS，已有 15 家付费客户，年化收入 180 万元。',
+    analysis: {
+      company: '链图科技',
+      field: '供应链可视化与风险预警 SaaS',
+      plan: '从制造业采购端切入，以供应链可视化为核心能力，逐步扩展到风险预警和供应商评估。',
+      patents: '2 项数据处理算法专利申请中，6 项软件著作权',
+      scale: '22 人团队，15 家付费客户，ARR 约 180 万，净收入留存率 115%',
+      strengths: ['SaaS 留存率高，客户续费意愿强', '供应链可视化需求受地缘政治影响持续放大', '产品交付轻量，实施周期短'],
+    },
+    profile: [
+      ['企业阶段', 'Pre-A / B2B SaaS'],
+      ['核心赛道', '供应链可视化 SaaS'],
+      ['融资诉求', '800 万 - 1500 万'],
+      ['政策适配', '数字化转型 / 工业互联网'],
+      ['技术壁垒', '多源数据融合 + 风险预警模型'],
+      ['客户验证', '15 家付费客户，ARR 180 万'],
+      ['申报抓手', '数字化服务商、工业互联网平台'],
+      ['资金用途', '产品迭代、销售团队、行业模板'],
+    ],
+    policies: [
+      {
+        title: '中小企业数字化转型服务商入库',
+        amount: '预计 30 万 - 80 万',
+        url: 'https://jxj.beijing.gov.cn/zwgk/2024zcwj/202507/t20250729_4161230.html',
+        conditions: ['具备 SaaS 产品交付能力', '服务中小制造业数字化', '有可复制实施流程'],
+        reason: '供应链可视化 SaaS 属于典型数字化转型工具，付费客户案例可支撑服务商申报。',
+        materials: ['服务商申请表', '产品功能说明', '客户合同列表', '实施流程文档'],
+      },
+      {
+        title: '工业互联网平台培育资金',
+        amount: '预计 50 万 - 150 万',
+        url: 'https://www.ncsti.gov.cn/zcfg/zcwj/201903/t20190321_13420.html',
+        conditions: ['平台连接工业场景', '有制造业客户数据', '具备数据安全能力'],
+        reason: '供应链平台连接制造业上下游，符合工业互联网平台培育方向。',
+        materials: ['平台架构说明', '客户数据规模', '数据安全方案', '平台功能截图'],
+      },
+      {
+        title: '科技型中小企业研发补贴',
+        amount: '预计 20 万 - 50 万',
+        url: 'https://beijing.chinatax.gov.cn/bjswj/sszc/zcjd/202404/fe5436e8d5304d4a86da854ba03e17d8/files/f9bc3557fc6844218bebce6fbdcdac37.pdf',
+        conditions: ['研发费用可归集', '有软著或专利', '年收入未超限额'],
+        reason: '产品持续迭代风险预警模块，研发投入可作为补贴依据。',
+        materials: ['软著证明', '研发费用台账', '版本迭代记录', '研发人员社保'],
+      },
+    ],
+    investors: [
+      {
+        name: '源码资本',
+        ticket: '单笔 600 万 - 2000 万',
+        focus: '企业服务、供应链科技、SaaS',
+        history: '投资过多家 B2B SaaS 和供应链科技公司，关注 NRR 和客户扩张路径。',
+        advice: '重点展示净收入留存率、客户 LTV/CAC 比和从单模块扩展到全链路的产品路线图。',
+        contact: 'contact@sourcecodecap.com',
+        website: 'https://www.sourcecodecap.com/',
+      },
+      {
+        name: '红点中国',
+        ticket: '单笔 500 万 - 2000 万',
+        focus: '企业软件、SaaS、供应链',
+        history: '在企业服务和 SaaS 领域有深厚布局，关注产品黏性和规模化销售效率。',
+        advice: '建议用标杆客户案例展示供应链可视化的具体价值，量化交货准时率提升和库存成本下降。',
+        contact: 'china@redpoint.com',
+        website: 'https://www.redpoint.com/',
+      },
+      {
+        name: '光速中国',
+        ticket: '单笔 800 万 - 3000 万',
+        focus: '企业服务、B2B SaaS、数字化',
+        history: '长期关注企业数字化转型赛道，投资过多家供应链和工业软件公司。',
+        advice: '沟通时突出 ARR 增长节奏、销售效率和行业复制速度，以及产品与 ERP/WMS 的集成能力。',
+        contact: 'bp@lsvp.com',
+        website: 'https://www.lsvp.com/',
+      },
+    ],
+    roadmap: [
+      { horizon: '30 天', title: '强化商业化指标与政策申报', tasks: ['整理 ARR、NRR 和客户留存数据', '申请数字化服务商入库', '准备 3 个标杆客户案例', '制作 Pre-A 投资人版本 Deck'] },
+      { horizon: '90 天', title: '推进融资与产品扩展', tasks: ['完成 10 家 Pre-A 投资人会议', '上线风险预警模块', '新增 5 家付费客户', '提交工业互联网平台培育材料'] },
+      { horizon: '180 天', title: '扩大销售与完成融资', tasks: ['ARR 突破 400 万', '形成行业标准化实施包', '完成 Pre-A 融资', '建立渠道合作伙伴网络'] },
     ],
   },
 ]
@@ -411,11 +331,12 @@ const demoBps = [
 function App() {
   const [fileName, setFileName] = useState('')
   const [isAnalyzing, setIsAnalyzing] = useState(false)
-  const [activeBpId, setActiveBpId] = useState(demoBps[0].id)
+  const [activeBpId, setActiveBpId] = useState(null)
   const [theme, setTheme] = useState('light')
   const [hasResult, setHasResult] = useState(false)
   const [showThinking, setShowThinking] = useState(false)
   const [thinkingBp, setThinkingBp] = useState(null)
+  const [modal, setModal] = useState(null)
   const activeBp = demoBps.find((bp) => bp.id === activeBpId) || demoBps[0]
 
   const particles = useMemo(
@@ -484,7 +405,23 @@ function App() {
             <span>创业不迷路</span>
             <span>企德来带路</span>
           </h1>
-          <p className="hero-subtitle">上传 BP 商业计划书，AI 自动解析企业画像，推荐政策、投资人和成长路线。</p>
+          <p className="hero-subtitle">上传 BP，AI 解析企业画像，精准推荐政策、投资人与成长路线。</p>
+          <div className="partner-stats">
+            <div className="partner-stat-block">
+              <strong>31</strong>
+              <span>所高校合作</span>
+            </div>
+            <div className="partner-stat-divider" />
+            <div className="partner-stat-block">
+              <strong>120+</strong>
+              <span>家投资机构</span>
+            </div>
+            <div className="partner-stat-divider" />
+            <div className="partner-stat-block">
+              <strong>北京市政府</strong>
+              <span>战略合作单位</span>
+            </div>
+          </div>
           <UploadPortal fileName={fileName} isAnalyzing={isAnalyzing} onFiles={handleFiles} />
           <DemoBpPicker activeBpId={activeBpId} demoBps={demoBps} onSelect={loadDemoBp} />
           <div className="feature-tags">
@@ -547,6 +484,13 @@ function App() {
             </article>
           ))}
         </div>
+        <ServiceBanner
+          icon={ReceiptText}
+          title="一站式政策填报服务"
+          description="专业团队代整理申报材料、跟进审批进度，全程陪跑提升申报通过率"
+          cta="预约填报服务"
+          onCta={() => setModal({ title: '预约填报服务', subtitle: '请留下联系方式，我们将在 1 个工作日内与您确认申报方向与所需材料，协助完成政策申报全流程。' })}
+        />
       </section>
 
       <section className="snap-window dashboard-window">
@@ -555,7 +499,10 @@ function App() {
           {activeBp.investors.map((investor) => (
             <article className="recommendation-card" key={investor.name}>
               <div className="card-orb"><BriefcaseBusiness size={25} /></div>
-              <span className="card-label">投资偏好</span>
+              <div className="card-label-row">
+                <span className="card-label">投资偏好</span>
+                <span className="partner-badge"><CheckCircle2 size={11} />合作机构</span>
+              </div>
               <h3>{investor.name}</h3>
               <strong className="investor-ticket">{investor.ticket}</strong>
               <strong className="funding-value">{investor.focus}</strong>
@@ -568,6 +515,13 @@ function App() {
             </article>
           ))}
         </div>
+        <ServiceBanner
+          icon={BriefcaseBusiness}
+          title="投资人直达对接服务"
+          description="根据 BP 精准触达匹配机构，协助沟通预约和初筛，提升融资效率"
+          cta="预约对接服务"
+          onCta={() => setModal({ title: '预约投资人对接服务', subtitle: '请留下联系方式，专属顾问将为您精准匹配投资机构，协助沟通预约与初筛，提升融资成功率。' })}
+        />
       </section>
 
       <section className="snap-window cta-window">
@@ -597,6 +551,13 @@ function App() {
               </article>
             ))}
           </div>
+          <ServiceBanner
+            icon={Sparkles}
+            title="全程陪伴与落地支持"
+            description="专属顾问跟进每个关键节点，协助材料准备、政策申报和投资人沟通，助你按节奏推进"
+            cta="了解陪伴服务"
+            onCta={() => setModal({ title: '了解全程陪伴服务', subtitle: '请留下联系方式，我们将为您详细介绍陪伴服务内容，并制定个性化支持方案，按节奏推进成长目标。' })}
+          />
           <div className="roadmap-footer">
             <MonitorCheck size={20} />
             <span>系统会持续追踪材料准备、政策窗口、投资人反馈和关键经营指标，并在下一轮更新路线图。</span>
@@ -633,6 +594,7 @@ function App() {
       </section>
 
       </>}
+      {modal && <ServiceModal service={modal} onClose={() => setModal(null)} />}
     </main>
   )
 }
@@ -754,6 +716,7 @@ function DemoBpPicker({ activeBpId, demoBps, onSelect }) {
             onClick={() => onSelect(bp)}
             type="button"
           >
+            <span className="demo-button-category">{bp.category}</span>
             <strong>{bp.name}</strong>
             <small>{bp.summary}</small>
           </button>
@@ -767,7 +730,7 @@ function Header({ theme, onToggleTheme }) {
   return (
     <header className="mission-header">
       <div className="brand">
-        <Cpu size={19} />
+        <Cpu size={22} />
         <span>企德地图</span>
       </div>
       <div className="header-actions">
@@ -828,6 +791,77 @@ function WindowTitle({ eyebrow, title }) {
         {eyebrow}
       </div>
       <h2>{title}</h2>
+    </div>
+  )
+}
+
+function ServiceBanner({ icon: Icon, title, description, cta, onCta }) {
+  return (
+    <div className="service-banner">
+      <div className="service-banner-icon">
+        <Icon size={20} />
+      </div>
+      <div className="service-banner-body">
+        <strong>{title}</strong>
+        <span>{description}</span>
+      </div>
+      <button className="service-banner-cta" type="button" onClick={onCta}>{cta}</button>
+    </div>
+  )
+}
+
+function ServiceModal({ service, onClose }) {
+  const [submitted, setSubmitted] = useState(false)
+  const [form, setForm] = useState({ name: '', contact: '', company: '', note: '' })
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    setSubmitted(true)
+  }
+
+  function set(field) {
+    return (e) => setForm((prev) => ({ ...prev, [field]: e.target.value }))
+  }
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-panel" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close" type="button" onClick={onClose}>✕</button>
+        {submitted ? (
+          <div className="modal-success">
+            <CheckCircle2 size={44} />
+            <strong>预约已提交</strong>
+            <p>感谢您的信任，我们将在 1 个工作日内与您联系，请保持手机畅通。</p>
+            <button className="modal-submit" type="button" onClick={onClose}>关闭</button>
+          </div>
+        ) : (
+          <>
+            <div className="modal-header">
+              <strong>{service.title}</strong>
+              <p>{service.subtitle}</p>
+            </div>
+            <form className="modal-form" onSubmit={handleSubmit}>
+              <div className="modal-field">
+                <label>姓名</label>
+                <input required placeholder="请输入您的姓名" value={form.name} onChange={set('name')} />
+              </div>
+              <div className="modal-field">
+                <label>联系方式</label>
+                <input required placeholder="手机号或邮箱" value={form.contact} onChange={set('contact')} />
+              </div>
+              <div className="modal-field">
+                <label>企业 / 项目名称</label>
+                <input placeholder="选填" value={form.company} onChange={set('company')} />
+              </div>
+              <div className="modal-field">
+                <label>备注</label>
+                <textarea placeholder="您的具体需求或问题（选填）" value={form.note} onChange={set('note')} />
+              </div>
+              <button className="modal-submit" type="submit">提交预约</button>
+            </form>
+          </>
+        )}
+      </div>
     </div>
   )
 }
