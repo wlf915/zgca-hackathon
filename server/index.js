@@ -78,64 +78,44 @@ const parks = [
 
 const fundingNavigator = [
   {
-    id: 'fund-seed',
-    title: '中关村硬科技种子基金',
+    id: 'fund-equity-seed',
+    title: '中关村硬科技种子基金直通车',
     category: 'Funding Navigator',
     subtype: '基金',
-    tags: ['基金', '硬科技', '人工智能', '医疗器械', 'Pre-A', '融资'],
-    value: '提供 300 万至 800 万元早期股权投资和产业专家陪跑',
-    requirements: ['具备明确技术壁垒', '有产品原型或试点客户', '融资轮次处于天使至 Pre-A'],
-    action: '准备 12 页融资 Deck、技术壁垒证明和 18 个月资金使用计划。',
+    tags: ['基金', '硬科技', '人工智能', 'AI医疗', '医疗器械', 'Pre-A', '融资'],
+    value: '建议申请 300 万至 800 万元种子轮/Pre-A 股权资金，用于模型研发、注册检测和首批试点。',
+    requirements: ['技术壁垒可被验证', '已有产品原型或试点线索', '融资用途和股权结构清晰'],
+    action: '准备 12 页融资 Deck、18 个月资金使用计划、核心技术壁垒证明和试点进展材料。',
   },
   {
-    id: 'fund-vc',
-    title: '海淀前沿产业创投联合会路演通道',
+    id: 'fund-vc-roadshow',
+    title: '海淀硬科技创投路演通道',
     category: 'Funding Navigator',
     subtype: '创投',
-    tags: ['创投', '融资', '商业化', '人工智能', 'Pre-A', '产业化'],
-    value: '对接 20+ 家硬科技 VC、产业资本和政府引导基金',
-    requirements: ['融资目标清晰', '商业化验证可量化', '团队股权结构清楚'],
-    action: '将 BP 改成投资人版本，突出市场规模、试点进展、融资用途和退出路径。',
+    tags: ['创投', '融资', '商业化', '人工智能', 'Pre-A', '产业化', '投资人'],
+    value: '对接硬科技 VC、产业资本和政府引导基金，适合需要快速验证融资反馈的早期企业。',
+    requirements: ['融资金额和估值区间明确', '商业化验证可量化', '路演材料能在 5 分钟内讲清增长逻辑'],
+    action: '将 BP 改成投资人版本，突出市场规模、标杆客户、收入路径、融资用途和退出可能性。',
   },
   {
-    id: 'fund-competition',
-    title: '中关村创新创业大赛 AI 医疗专项赛',
+    id: 'fund-competition-ai',
+    title: '中关村创新创业大赛专项赛',
     category: 'Funding Navigator',
     subtype: '创业赛事',
-    tags: ['创业赛事', 'AI医疗', '医学影像', '品牌背书', '融资', '场景验证'],
-    value: '获得赛事奖金、媒体曝光、投资人闭门会和园区绿色通道',
-    requirements: ['项目具备创新性', '可现场演示产品', '提交商业计划书和路演材料'],
-    action: '打磨 5 分钟路演脚本，突出痛点、技术壁垒、政策适配和落地计划。',
+    tags: ['创业赛事', 'AI医疗', '人工智能', '医学影像', '品牌背书', '融资', '场景验证'],
+    value: '通过赛事获取奖金、媒体曝光、投资人闭门会和园区绿色通道，适合提升项目可信度。',
+    requirements: ['项目创新性明确', '可现场演示产品或 Demo', '提交商业计划书、路演稿和团队介绍'],
+    action: '打磨 5 分钟路演脚本，突出行业痛点、技术壁垒、落地场景、政策适配和融资诉求。',
   },
   {
-    id: 'fund-loan',
+    id: 'fund-interest-free-loan',
     title: '科技型小微企业无息周转贷款',
     category: 'Funding Navigator',
     subtype: '无息贷款',
-    tags: ['无息贷款', '硬科技', '研发补贴', '现金流', '商业化', '知识产权'],
-    value: '提供 50 万至 200 万元 6-12 个月无息周转资金',
-    requirements: ['企业信用记录良好', '有研发或订单支出证明', '法定代表人和企业征信通过初筛'],
-    action: '准备银行流水、订单或研发合同、纳税记录和知识产权证明。',
-  },
-  {
-    id: 'fund-med-growth',
-    title: '医疗器械成果转化引导基金',
-    category: 'Funding Navigator',
-    subtype: '基金',
-    tags: ['基金', 'AI医疗', '医疗器械', '临床合规', '产业化', '医院试点'],
-    value: '支持医疗器械注册、临床试点和首批产业化投入',
-    requirements: ['产品路径符合医疗器械或数字医疗方向', '具备注册策略', '已有临床或医院合作意向'],
-    action: '补齐注册路径、临床价值假设和试点医院意向材料。',
-  },
-  {
-    id: 'fund-bank',
-    title: '知识产权质押无息贷款绿色通道',
-    category: 'Funding Navigator',
-    subtype: '无息贷款',
-    tags: ['无息贷款', '知识产权', '专利', '软著', '硬科技', '现金流'],
-    value: '以专利、软著和研发合同作为增信材料，降低早期企业融资成本',
-    requirements: ['至少 1 项核心知识产权', '知识产权权属清晰', '资金用途为研发或订单交付'],
-    action: '先做知识产权权属核验，再提交质押评估和资金用途说明。',
+    tags: ['无息贷款', '硬科技', '研发补贴', '现金流', '商业化', '知识产权', '订单'],
+    value: '建议申请 50 万至 200 万元、6-12 个月无息周转资金，用于研发支出、试点交付和短期现金流。',
+    requirements: ['企业信用记录良好', '有研发、订单或试点支出证明', '法定代表人和企业征信通过初筛'],
+    action: '准备银行流水、纳税记录、订单或研发合同、知识产权证明和资金用途说明。',
   },
 ]
 
@@ -247,6 +227,19 @@ function scoreResource(profile, resource) {
   }
 }
 
+function selectMatches(scored, category) {
+  const items = scored.filter((item) => item.category === category)
+
+  if (category !== 'Funding Navigator') {
+    return items.slice(0, 3)
+  }
+
+  const requiredSubtypes = ['基金', '创投', '创业赛事', '无息贷款']
+  return requiredSubtypes
+    .map((subtype) => items.find((item) => item.subtype === subtype))
+    .filter(Boolean)
+}
+
 function buildActionPlan(profile, matches) {
   const topPolicy = matches.find((item) => item.category === '政策')
   const topPark = matches.find((item) => item.category === '园区')
@@ -288,7 +281,7 @@ app.post('/api/analyze', upload.single('bp'), (req, res) => {
     .sort((a, b) => b.score - a.score)
 
   const matches = ['政策', '园区', 'Funding Navigator'].reduce((acc, category) => {
-    acc[category] = scored.filter((item) => item.category === category).slice(0, 3)
+    acc[category] = selectMatches(scored, category)
     return acc
   }, {})
 
