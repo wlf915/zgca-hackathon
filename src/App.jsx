@@ -6,8 +6,6 @@ import {
   BriefcaseBusiness,
   CircleDot,
   Cpu,
-  DatabaseZap,
-  FileText,
   Globe2,
   Landmark,
   Layers,
@@ -15,7 +13,6 @@ import {
   Loader2,
   MonitorCheck,
   ReceiptText,
-  ScanLine,
   Sparkles,
   Sun,
   UploadCloud,
@@ -26,11 +23,10 @@ import './App.css'
 const featureTags = ['BP 解析', '企业画像', '政策推荐', '投资人匹配', '成长规划']
 
 const stages = [
-  { label: 'BP 文件输入', icon: FileText },
-  { label: '企业信息抽取', icon: ScanLine },
-  { label: '结构化画像生成', icon: DatabaseZap },
-  { label: '政策与资本匹配', icon: BrainCircuit },
-  { label: '行动路线输出', icon: Sparkles },
+  { label: '政策窗口', value: '匹配 3 项可申报机会', icon: Landmark },
+  { label: '资本路径', value: '筛选早期 / 产业资本', icon: BriefcaseBusiness },
+  { label: '材料缺口', value: '提示资质、合同、财务证明', icon: ReceiptText },
+  { label: '增长节奏', value: '拆成 30 / 90 / 180 天动作', icon: Sparkles },
 ]
 
 const defaultRoadmap = [
@@ -92,6 +88,10 @@ const demoBps = [
       ['核心赛道', 'AI 医疗影像'],
       ['融资诉求', '1200 万 - 1800 万'],
       ['政策适配', '医疗器械 / 高新技术'],
+      ['技术壁垒', '影像算法 + 临床数据闭环'],
+      ['客户验证', '3 家基层医院试点'],
+      ['申报抓手', '注册检测、示范应用、软著专利'],
+      ['资金用途', '注册检测、渠道扩张、算法迭代'],
     ],
     policies: [
       {
@@ -172,6 +172,10 @@ const demoBps = [
       ['核心赛道', '协作机器人'],
       ['融资诉求', '2000 万 - 3000 万'],
       ['政策适配', '智能制造 / 专精特新'],
+      ['技术壁垒', '柔性控制算法 + 本体设计'],
+      ['客户验证', '12 台小批量交付'],
+      ['申报抓手', '首台套、专精特新、产线示范'],
+      ['资金用途', '供应链、产能建设、量产良率'],
     ],
     policies: [
       {
@@ -252,6 +256,10 @@ const demoBps = [
       ['核心赛道', '双碳管理软件'],
       ['融资诉求', '600 万 - 1000 万'],
       ['政策适配', '绿色低碳 / 数字化转型'],
+      ['技术壁垒', '碳数据模型 + 自动报告流程'],
+      ['客户验证', '20 家制造业付费客户'],
+      ['申报抓手', '绿色低碳服务、数字化服务商'],
+      ['资金用途', '产品模块、渠道伙伴、行业模板'],
     ],
     policies: [
       {
@@ -332,6 +340,10 @@ const demoBps = [
       ['核心赛道', '边缘 AI 芯片'],
       ['融资诉求', '3000 万 - 5000 万'],
       ['政策适配', '集成电路 / 硬科技'],
+      ['技术壁垒', '低功耗推理架构 + 算子加速'],
+      ['客户验证', 'MPW 流片，5 家样片测试'],
+      ['申报抓手', '集成电路专项、首购首用'],
+      ['资金用途', '流片、EDA、样片验证、量产准备'],
     ],
     policies: [
       {
@@ -400,7 +412,10 @@ function App() {
   const [fileName, setFileName] = useState('')
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [activeBpId, setActiveBpId] = useState(demoBps[0].id)
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
+  const [hasResult, setHasResult] = useState(false)
+  const [showThinking, setShowThinking] = useState(false)
+  const [thinkingBp, setThinkingBp] = useState(null)
   const activeBp = demoBps.find((bp) => bp.id === activeBpId) || demoBps[0]
 
   const particles = useMemo(
@@ -418,14 +433,40 @@ function App() {
     if (!file) return
     setFileName(file.name)
     setIsAnalyzing(true)
-    window.setTimeout(() => setIsAnalyzing(false), 2100)
+    setHasResult(true)
+    setThinkingBp({
+      name: file.name.replace(/\.pdf$/i, ''),
+      analysis: {
+        company: '您的企业',
+        plan: 'AI 正在分析商业计划书内容...',
+        patents: '分析中',
+        strengths: ['AI 正在提取核心竞争优势'],
+      },
+      policies: activeBp.policies,
+      investors: activeBp.investors,
+    })
+    setShowThinking(true)
   }
 
   function loadDemoBp(bp) {
     setActiveBpId(bp.id)
     setFileName(bp.fileName)
     setIsAnalyzing(true)
-    window.setTimeout(() => setIsAnalyzing(false), 900)
+    setThinkingBp(bp)
+    setShowThinking(true)
+    setHasResult(true)
+  }
+
+  function handleThinkingDone() {
+    setShowThinking(false)
+    setIsAnalyzing(false)
+    window.setTimeout(() => {
+      const shell = document.querySelector('.mission-shell')
+      const target = document.getElementById('thinking')
+      if (shell && target) {
+        shell.scrollTo({ top: target.offsetTop, behavior: 'smooth' })
+      }
+    }, 120)
   }
 
   return (
@@ -433,12 +474,16 @@ function App() {
       <Ambient particles={particles} />
       <section className="snap-window hero-window">
         <Header theme={theme} onToggleTheme={() => setTheme(theme === 'dark' ? 'light' : 'dark')} />
+        {showThinking && thinkingBp && <ThinkingOverlay bp={thinkingBp} onDone={handleThinkingDone} />}
         <div className="hero-content">
           <div className="section-kicker">
             <CircleDot size={13} />
             企德地图
           </div>
-          <h1>让企业资源匹配有地图可循</h1>
+          <h1 className="hero-title">
+            <span>创业不迷路</span>
+            <span>企德来带路</span>
+          </h1>
           <p className="hero-subtitle">上传 BP 商业计划书，AI 自动解析企业画像，推荐政策、投资人和成长路线。</p>
           <UploadPortal fileName={fileName} isAnalyzing={isAnalyzing} onFiles={handleFiles} />
           <DemoBpPicker activeBpId={activeBpId} demoBps={demoBps} onSelect={loadDemoBp} />
@@ -456,24 +501,29 @@ function App() {
         </a>
       </section>
 
+      {hasResult && <>
+
       <section className="snap-window processing-window" id="thinking">
         <WindowTitle eyebrow="BP 智能解析" title="企业结构化画像" />
         <div className="analysis-layout">
           <EnterpriseAnalysis bp={activeBp} />
           <div className="stage-stack">
-            {stages.map(({ label, icon: Icon }) => (
+            {stages.map(({ label, value, icon: Icon }) => (
               <article className="stage-card" key={label}>
                 <Icon size={19} />
-                <span>{label}</span>
+                <div>
+                  <span>{label}</span>
+                  <strong>{value}</strong>
+                </div>
               </article>
             ))}
           </div>
-          <div className="metric-cloud profile-cloud">
+          <div className="profile-cloud">
             {activeBp.profile.map(([label, value]) => (
-              <article className="floating-metric" key={label}>
+              <div className="profile-bubble" key={label}>
                 <span>{label}</span>
                 <strong>{value}</strong>
-              </article>
+              </div>
             ))}
           </div>
         </div>
@@ -581,7 +631,83 @@ function App() {
           <span>个人和企业用户可先免费体验一个月；机构客户可预约专属政策库、投资人库和企业服务工作台。</span>
         </div>
       </section>
+
+      </>}
     </main>
+  )
+}
+
+function ThinkingOverlay({ bp, onDone }) {
+  const steps = [
+    {
+      title: '读取商业计划书结构',
+      items: [
+        `识别企业「${bp.analysis.company}」基本信息框架`,
+        '提取企业阶段、赛道与定位标签',
+        '解析融资诉求与核心商业计划',
+      ],
+    },
+    {
+      title: '解析企业核心竞争壁垒',
+      items: [
+        bp.analysis.plan.length > 36 ? bp.analysis.plan.slice(0, 36) + '…' : bp.analysis.plan,
+        `知识产权：${bp.analysis.patents}`,
+        bp.analysis.strengths[0] || '竞争优势分析完成',
+      ],
+    },
+    {
+      title: '匹配政策与资本数据库',
+      items: [
+        `政策库扫描完成，命中 ${bp.policies.length} 项适配机会`,
+        `投资机构画像匹配，推荐 ${bp.investors.length} 家机构`,
+        '申报材料缺口与时间窗口已标注',
+      ],
+    },
+    {
+      title: '生成成长路线规划',
+      items: [
+        '30 / 90 / 180 天分阶段行动建议已生成',
+        '资料缺口清单与风险提示已完成',
+        '优先级排序完成，完整报告就绪',
+      ],
+    },
+  ]
+
+  return (
+    <div className="thinking-overlay">
+      <div className="thinking-panel">
+        <div className="thinking-header">
+          <BrainCircuit size={17} />
+          <span>AI 深度解析</span>
+          <span>·</span>
+          <span className="thinking-model-badge">正在调用 GPT-5.5</span>
+          <span>·</span>
+          <span className="thinking-header-target">{bp.name}</span>
+          <Loader2 className="spin thinking-header-spin" size={14} />
+        </div>
+        <div className="thinking-title">Thinking...</div>
+        <div className="thinking-steps">
+          {steps.map((step, i) => (
+            <div
+              className="thinking-step"
+              key={step.title}
+              style={{ animationDelay: `${i * 1.6 + 0.3}s` }}
+            >
+              <h3 className="thinking-step-title">{step.title}</h3>
+              <ul className="thinking-step-items">
+                {step.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <button className="thinking-done" style={{ animationDelay: '7.2s' }} onClick={onDone}>
+          <Sparkles size={13} />
+          分析完成 · 点击查看完整报告
+        </button>
+      </div>
+    </div>
   )
 }
 
