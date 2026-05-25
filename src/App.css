@@ -1,0 +1,426 @@
+.app-shell {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(230, 247, 255, 0.85) 0%, rgba(255, 255, 255, 0) 360px),
+    #f6f8fb;
+  color: #172033;
+}
+
+.topbar {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: auto 1fr auto;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 24px 28px 18px;
+}
+
+.brand-mark,
+.mode-pill,
+button,
+.tab,
+.score-ring {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.brand-mark {
+  background: #0d6efd;
+  border-radius: 8px;
+  color: #fff;
+  height: 38px;
+  width: 38px;
+}
+
+.topbar h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.topbar h1 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.eyebrow {
+  color: #66758f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.mode-pill {
+  background: #0f1f3d;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  min-height: 34px;
+  padding: 0 14px;
+}
+
+.workspace {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 420px minmax(0, 1fr);
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 28px 32px;
+}
+
+.input-panel,
+.result-panel,
+.profile-card,
+.match-section,
+.action-plan {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #dce5ef;
+  border-radius: 8px;
+  box-shadow: 0 12px 34px rgba(40, 67, 102, 0.08);
+}
+
+.input-panel {
+  align-self: start;
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  position: sticky;
+  top: 14px;
+}
+
+.panel-heading,
+.section-title,
+.profile-head,
+.resource-top {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.input-panel label {
+  color: #384963;
+  display: grid;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 7px;
+  text-align: left;
+}
+
+input,
+textarea {
+  background: #f9fbfd;
+  border: 1px solid #cfd9e6;
+  border-radius: 7px;
+  color: #172033;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  padding: 11px 12px;
+}
+
+textarea {
+  line-height: 1.55;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
+}
+
+.upload-box {
+  align-items: center;
+  background: #eef6ff;
+  border: 1px dashed #88b7ef;
+  border-radius: 8px;
+  color: #28507c;
+  cursor: pointer;
+  display: flex !important;
+  flex-direction: row;
+  gap: 10px !important;
+  min-height: 56px;
+  padding: 12px;
+}
+
+.upload-box input {
+  display: none;
+}
+
+button {
+  background: #0d6efd;
+  border: 0;
+  border-radius: 7px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 16px;
+}
+
+button:disabled {
+  cursor: progress;
+  opacity: 0.75;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-text {
+  color: #b42318;
+  font-size: 14px;
+}
+
+.result-panel {
+  display: grid;
+  gap: 16px;
+  min-height: 720px;
+  padding: 18px;
+}
+
+.empty-state {
+  align-content: center;
+  color: #60708a;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  min-height: 620px;
+  text-align: center;
+}
+
+.empty-state h2 {
+  color: #172033;
+}
+
+.agent-strip {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.agent-item {
+  background: #f6fbf8;
+  border: 1px solid #d5eadb;
+  border-radius: 8px;
+  color: #28533a;
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+}
+
+.agent-item span {
+  color: #4f6d5d;
+  font-size: 13px;
+}
+
+.profile-card,
+.match-section,
+.action-plan {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.profile-head h2 {
+  font-size: 25px;
+}
+
+.profile-head p:last-child {
+  color: #50627d;
+  margin-top: 4px;
+}
+
+.score-ring {
+  background: #ecfdf3;
+  border: 1px solid #bde8cc;
+  border-radius: 50%;
+  color: #087443;
+  font-size: 21px;
+  font-weight: 900;
+  height: 58px;
+  width: 58px;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-row span {
+  background: #edf4ff;
+  border: 1px solid #cfe0fb;
+  border-radius: 999px;
+  color: #1958a6;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 10px;
+}
+
+.profile-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.info-block {
+  background: #fbfcfe;
+  border: 1px solid #e3eaf2;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.info-block h3,
+.resource-card h3,
+.timeline-item h3 {
+  color: #172033;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+li {
+  color: #50627d;
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 5px 0;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tab {
+  background: #f1f5f9;
+  color: #3d4d63;
+  font-size: 14px;
+  min-height: 36px;
+}
+
+.tab.active {
+  background: #0f1f3d;
+  color: #fff;
+}
+
+.match-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.resource-card {
+  background: #fff;
+  border: 1px solid #dfe7f0;
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  padding: 15px;
+}
+
+.resource-top strong {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 7px;
+  color: #c2410c;
+  padding: 6px 8px;
+}
+
+.resource-value {
+  color: #29435f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.reason-list {
+  border-top: 1px solid #eef2f6;
+  padding-top: 8px;
+}
+
+.next-action {
+  align-items: flex-start;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  color: #29435f;
+  display: flex;
+  font-size: 13px;
+  gap: 8px;
+  line-height: 1.5;
+  padding: 10px;
+}
+
+.timeline {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.timeline-item {
+  border-left: 3px solid #0d6efd;
+  background: #fbfcfe;
+  padding: 12px 14px;
+}
+
+@media (max-width: 1100px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .input-panel {
+    position: static;
+  }
+
+  .match-grid,
+  .profile-grid,
+  .timeline,
+  .agent-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    grid-template-columns: auto 1fr;
+    padding: 18px 14px;
+  }
+
+  .mode-pill {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .topbar h1 {
+    font-size: 22px;
+  }
+
+  .workspace {
+    padding: 0 14px 24px;
+  }
+
+  .result-panel,
+  .input-panel {
+    padding: 14px;
+  }
+}
