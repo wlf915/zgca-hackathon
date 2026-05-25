@@ -580,13 +580,7 @@ function App() {
             </article>
           ))}
         </div>
-        <form className="subscribe-form">
-          <label htmlFor="subscribe-email">输入邮箱，开通首月免费体验</label>
-          <div>
-            <input id="subscribe-email" type="email" placeholder="yourname@company.com" />
-            <button type="button">申请体验</button>
-          </div>
-        </form>
+        <SubscribeForm />
         <div className="subscription-note">
           <Sparkles size={18} />
           <span>个人和企业用户可先免费体验一个月；机构客户可预约专属政策库、投资人库和企业服务工作台。</span>
@@ -863,6 +857,26 @@ function ServiceModal({ service, onClose }) {
         )}
       </div>
     </div>
+  )
+}
+
+function SubscribeForm() {
+  const [subscribed, setSubscribed] = useState(false)
+  return (
+    <form className="subscribe-form" onSubmit={(e) => { e.preventDefault(); setSubscribed(true) }}>
+      <label htmlFor="subscribe-email">输入邮箱，开通首月免费体验</label>
+      {subscribed ? (
+        <div className="subscribe-success">
+          <CheckCircle2 size={18} />
+          <span>邮箱已登记，我们将尽快与您联系！</span>
+        </div>
+      ) : (
+        <div>
+          <input id="subscribe-email" type="email" placeholder="yourname@company.com" required />
+          <button type="submit">申请体验</button>
+        </div>
+      )}
+    </form>
   )
 }
 

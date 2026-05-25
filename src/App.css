@@ -1517,6 +1517,21 @@ h1 {
   min-height: 68px;
 }
 
+.subscribe-success {
+  align-items: center;
+  animation: thinkStepIn 0.36s ease both;
+  color: var(--cyan);
+  display: flex;
+  font-size: 15px;
+  font-weight: 900;
+  gap: 9px;
+  padding: 10px 2px;
+}
+
+.light-theme .subscribe-success {
+  color: #006f8e;
+}
+
 .subscription-note {
   max-width: 1120px;
   position: relative;
